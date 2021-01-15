@@ -10,14 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Debojyoti1915001/NITP_hacks.git"
+    "url": "git+https://github.com/azad-ali786/NITP_hacks.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/azad-ali786/NITP_hacks/issues"
-  },
-  "homepage": "https://github.com/azad-ali786/NITP_hacks#readme",
+ 
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
