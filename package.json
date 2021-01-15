@@ -1,6 +1,7 @@
 {
   "name": "nitphackethon",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -36,5 +37,21 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
+=======
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.32.4"
+  },
+  "dependencies": {
+    "@dogstudio/highway": "^2.2.1",
+    "gsap": "^3.6.0"
+>>>>>>> b30c36642159cfc92fd921e90edc412e205d65c5
   }
 }
