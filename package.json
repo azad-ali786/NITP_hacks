@@ -1,7 +1,6 @@
 {
   "name": "nitphackethon",
   "version": "1.0.0",
-<<<<<<< HEAD
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -20,6 +19,7 @@
   },
   "homepage": "https://github.com/azad-ali786/NITP_hacks#readme",
   "dependencies": {
+    "@dogstudio/highway": "^2.2.1",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
@@ -28,6 +28,7 @@
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.1",
+    "gsap": "^3.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.7",
     "multer": "^1.4.2",
@@ -36,22 +37,7 @@
     "validator": "^13.1.17"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
-=======
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
+    "nodemon": "^2.0.6",
     "sass": "^1.32.4"
-  },
-  "dependencies": {
-    "@dogstudio/highway": "^2.2.1",
-    "gsap": "^3.6.0"
->>>>>>> b30c36642159cfc92fd921e90edc412e205d65c5
   }
 }
