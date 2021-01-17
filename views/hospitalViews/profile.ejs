@@ -3,10 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMINISTRATION PROFILE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <title>DigImmuno</title>
 </head>
 <body>
-    <%- include('../partials/message'); %></div>
-    <h1>ADMINISTRATION PROFILE</h1>
+    <%- include('../partials/navbar'); %>
+    <%- include('../partials/message'); %>
+    <div><center>Dashboard</center></div>
+    <table class="table table-striped"> 
+      <thead> 
+          <tr> 
+              <th>Name</th> 
+              <th>Phone Number</th> 
+              <th>Send email</th> 
+          </tr> 
+      </thead> 
+      <tbody>
+          <% user.forEach(function(users) { %>
+              <tr> 
+                  <td><%= users.name %></td> 
+                  <td><%= users.phoneNumber %></td>
+                  <td><button onclick={sendmail(users.email)}></button></td> 
+              </tr> 
+          <% }); %>
+      </tbody> 
+  </table>
+    <br>
+    <a href="/hospital/logout"><h1>Logout</h1></a> 
+
+    <%- include('../partials/footer'); %>
+    <script src="/js/nodemailer.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>

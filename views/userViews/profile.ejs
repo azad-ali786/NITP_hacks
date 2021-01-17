@@ -3,17 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <title>DigImmuno</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <%- include('../partials/navbar'); %>
-    <%- include('../partials/message'); %>
-    <div><center>Dashboard</center></div>
+    <nav>
+        <ul class="nav-list">
+            <li><a class="nav-links" href="/user/profile">Home</a></li>
+            <li><a class="nav-links" href="/user/covid">Covid</a></li>
+            <li><a class="nav-links" href="/user/vaccine">Vaccines Update</a></li>
+            <li><a class="nav-links" href="/user/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <main data-router-wrapper>
+        <section data-router-view="home" class="home">
+            <div class="home-content">
+                <div class="home-presentation">
+                    <h1>DigImmuno</h1>
+                    <p>Digitising the Covid-19 vaccination</p>
+                </div>
+                <img src="/images/DigImmuno.png" alt="home">
+            </div>
+        </section>
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+</html>
     <br>
-    <a href="/user/logout"><h1>Logout</h1></a> 
+     
 
-    <%- include('../partials/footer'); %>
+    
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

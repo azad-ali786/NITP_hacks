@@ -1,0 +1,94 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  .nav-list {
+    height: 10vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 50%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: auto;
+    list-style: none;
+  }
+  
+  .nav-list li {
+    padding: 0% 10%;
+  }
+  
+  .nav-list li a {
+    color: #8565d1;
+  }
+  
+  .nav-links {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  
+  .home, .login {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#a18cd1), to(#fbc2eb));
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  }
+  
+  .home, .login {
+    height: 90vh;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .home-content, .login-content {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .home-content img, .login-content img {
+    height: 70%;
+  }
+  
+  .home-content h1, .login-content h1 {
+    font-size: 50px;
+    margin: 30px 0px;
+  }
+  
+  .home-content p, .login-content p {
+    font-size: 20px;
+  }
+  
+  .login {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#a18cd1), to(#fbc2eb));
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  }
+  
+  nav {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    background-color: #fbc2eb;
+  }
+  
+  .home-presentation, .login-presentation {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #1b1230;
+  }
+  
+  .home-presentation h1, .login-presentation h1 {
+    padding-bottom: 10%;
+  }
+  

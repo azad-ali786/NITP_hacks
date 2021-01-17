@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vaccineUpdate</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav style="z-index: 1000;height: 12.56vh;">
+        <ul class="nav-list">
+            <li><a class="nav-links" href="/user/profile">Home</a></li>
+            <li><a class="nav-links" href="/user/covid">Covid</a></li>
+            <li><a class="nav-links" href="/user/vaccine">Vaccines Update</a></li>
+        </ul>
+    </nav>
+
+    <main data-router-wrapper>
+        <section data-router-view="login" class="login">
+            <div class="login-content">
+                <iframe
+      src="https://vaccovid.live/vaccine-tracker"
+      frameborder="0"
+      style="height: 100vh; width: 100%;position: absolute;top:0%"
+  ></iframe>
+            </div>
+        </section>
+    </main>   
+    <script src="./js/index.js"></script>
+</body>
+</html>

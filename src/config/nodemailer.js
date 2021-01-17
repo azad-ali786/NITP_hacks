@@ -3,7 +3,7 @@ require('dotenv').config()
 const jwt = require('jsonwebtoken')
 
 const signupMail = (data, host, protocol) => {
-    const maxAge = 3 * 60 * 60
+    const maxAge = 3*24 * 60 * 60
 
     const TOKEN = jwt.sign({ id: data._id }, process.env.JWT_SECRET, {
         expiresIn: maxAge,
@@ -91,7 +91,7 @@ const contactMail = (issue, type) => {
 
 
 const hospitalSignupMail = (data, host, protocol) => {
-    const maxAge = 3 * 60 * 60
+    const maxAge = 3*24 * 60 * 60
 
     const TOKEN = jwt.sign({ id: data._id }, process.env.JWT_SECRET, {
         expiresIn: maxAge,
@@ -120,7 +120,7 @@ const hospitalSignupMail = (data, host, protocol) => {
     }
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            console.log('Error', error)
+            console.log('Error at nodemailer', error)
         } else {
             console.log('Email sent: ' + info.response)
         }
