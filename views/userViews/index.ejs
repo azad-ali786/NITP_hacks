@@ -22,7 +22,7 @@
 
     <!--==================================== Font awesome CSS =============================================================-->
     <!--===================================================================================================================-->
-
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="your_website_domain/css_root/flaticon.css">
@@ -36,11 +36,17 @@
 
 </head>
 <body>
-    
+     
    
     <%- include('../partials/navbar'); %>
 
-       <div><h1><center>HOMEPAGE</center></h1></div>
+    <div class="home-content">
+        <div class="home-presentation">
+            <h1>DigImmuno</h1>
+            <p>Digitising the Covid-19 vaccination</p>
+        </div>
+        <img style="height:60vh" src="/images/DigImmuno.png" alt="home">
+    </div>
 
     <!-- Footer -->
     <%- include('../partials/footer'); %>

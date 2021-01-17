@@ -1,5 +1,5 @@
 const Hospital = require('../models/Hospital'); 
-
+const User = require('../models/User'); 
 
 const jwt = require('jsonwebtoken')
 const { hospitalSignupMail } = require('../config/nodemailer')
@@ -9,15 +9,22 @@ const { handleErrors } = require('../utilities/Utilities');
 require('dotenv').config()
 
 const maxAge = 30 * 24 * 60 * 60
-
+ 
 
 module.exports.signup_get = (req, res) => {
-    res.render("./hospitalViews/signup")
-
+    res.render("./hospitalViews/signup",{
+        type: 'signup'
+    })
 }
-
+ 
 module.exports.profile_get = async (req, res) => {
-    res.render("./hospitalViews/profile")
+    User.find({ "userid": req.user._id }, function(err, user) {
+        if (err) {
+            console.log(err);
+        } else {            
+            res.render("./hospitalViews/profile", { path: req.path, user: user });
+        }
+    });
 }
 
 
@@ -55,7 +62,7 @@ module.exports.emailVerify_get = async (req, res) => {
                     )
                     //console.log('The user has been verified.')
                     //console.log('active', activeUser)
-                    res.redirect('/hospital/login')
+                    res.redirect('/hospital/profile')
                 }
             }
         })
@@ -67,14 +74,15 @@ module.exports.emailVerify_get = async (req, res) => {
 }
 
 module.exports.signup_post = async (req, res) => {
+    console.log("In sign up route ")
     const { licenseNumber,  hospitalName, email, phoneNumber,password, confirmPwd  } = req.body
     //console.log("in sign up route",req.body);
     if (!(!password || !confirmPwd) && (password != confirmPwd)) {
         req.flash('error_msg', 'Passwords do not match. Try again')
-        res.status(400).redirect('/hospital/login')
+        res.status(400).redirect('/hospital/signup')
         return;
     }
-
+  
     try {
         const hospitalExists = await Hospital.findOne({ email })
         //console.log('userexists', userExists)
@@ -92,7 +100,7 @@ module.exports.signup_post = async (req, res) => {
             )
             return res.redirect('/hospital/login')
         }
-
+ 
         const hospital = new Hospital({ licenseNumber,  hospitalName, email, phoneNumber,password  })
         let saveUser = await hospital.save()
         //console.log(saveUser);
@@ -117,19 +125,21 @@ module.exports.signup_post = async (req, res) => {
     }
 }
 module.exports.login_get = (req, res) => {
-    res.render("./hospitalViews/login")
+    res.render("./hospitalViews/login",{
+        type: 'login'
+    })
 }
 
 module.exports.login_post = async (req, res) => {
     const { email, password } = req.body
-    // console.log('in Login route')
-    // console.log('req.body',req.body)
+    console.log('in Login route')
+    console.log('req.body',req.body)
     try {
 
         const hospital = await Hospital.login(email, password)
 
         const userExists = await Hospital.findOne({ email })
-        
+         
 
         if (!userExists.active) {
             const currDate = new Date();
@@ -171,7 +181,6 @@ module.exports.login_post = async (req, res) => {
 
 
 module.exports.logout_get = async (req, res) => {
-    
     res.clearCookie('hospital')
     req.flash('success_msg', 'Successfully logged out')
     res.redirect('/hospital/login')

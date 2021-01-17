@@ -12,6 +12,8 @@ router.get('/login', redirectIfLoggedIn, authController.login_get)
 router.post('/login', authController.login_post)
 router.get('/logout', requireAuth, authController.logout_get)
 router.get('/profile', requireAuth, authController.profile_get)
+router.get('/covid', requireAuth, authController.covid_get)
+router.get('/vaccine', requireAuth, authController.vaccine_get)
 
 
 module.exports = router

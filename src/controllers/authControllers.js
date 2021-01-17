@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const Profile = require('../models/Profile')
 const jwt = require('jsonwebtoken')
 const { signupMail } = require('../config/nodemailer')
 const path = require('path')
@@ -169,6 +170,15 @@ module.exports.login_post = async (req, res) => {
 module.exports.profile_get = async (req, res) => {
     res.locals.user = req.user
     res.render('./userViews/profile')
+    const { vn,tov,add }=req.body
+    const profile = new Profile({ vn,tov,add })
+    let saveProfile = await profile.save()
+    if(!saveProfile){
+        req.flash(
+            'success_msg',
+            'Send to Admin'
+        )
+    }
 }
 
 module.exports.logout_get = async (req, res) => {
@@ -182,3 +192,9 @@ module.exports.logout_get = async (req, res) => {
 // module.exports.upload_get =async (req, res) => {
 //   res.render("multer")
 // }
+module.exports.covid_get=async(req,res)=>{
+    res.render("./userViews/covid")
+}
+module.exports.vaccine_get=async(req,res)=>{
+    res.render("./userViews/vaccine")
+}

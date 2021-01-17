@@ -24,6 +24,11 @@ body {
 ul {
     margin-left: 6vw;
 }
+.middle{
+    position: absolute;
+    left: 35%;
+    top:23%;
+}
 ul li {
     color: black;
     font-family: Product Sans;
@@ -143,10 +148,10 @@ ul li {
     margin-top: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('../img/signup-dots.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 98vw 93vh;
+    margin-left: 17%;
 }
 #design {
     margin-top: 18vh;
